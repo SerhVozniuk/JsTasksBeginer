@@ -182,3 +182,4 @@ function returnInitials (str){
 console.log(returnInitials('Анастасия Черданцева'));
 
 //Task13
+
