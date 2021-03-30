@@ -183,3 +183,8 @@ console.log(returnInitials('Анастасия Черданцева'));
 
 //Task13
 
+function findValueInArr(arr, item) {
+    if(arr.includes(item)) return `Да, значение ${item} есть в массиве`;
+    else return `Нет, такого значения нет`;
+}
+console.log(findValueInArr([80, 117, 115, 104, 45, 85, 112, 115], 45));
