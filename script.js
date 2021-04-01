@@ -188,3 +188,111 @@ function findValueInArr(arr, item) {
     else return `Нет, такого значения нет`;
 }
 console.log(findValueInArr([80, 117, 115, 104, 45, 85, 112, 115], 45));
+
+//Task 14
+String.prototype.isUpCase = function(){
+    let arr = this.split('');
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i] !== arr[i].toLowerCase()) return true;
+        else return false;
+    }
+}
+console.log('HELLO I AM DONALD'.isUpCase());
+
+//Task15
+function findCountSumbol (str, sumbol){
+    let count = 0;
+    str.split('').forEach(item =>{
+        if(item  == sumbol) count++;
+    });
+    return count;
+}
+console.log(findCountSumbol('Hello', 'l'));
+
+//Task16
+function killSecondElem(arr) {
+    let finalyArr = [];
+    arr.map((item, index) =>{
+        if(index % 2 == 0) finalyArr.push(item);
+    });
+    return finalyArr;
+}
+console.log(killSecondElem([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+// Task17
+/* function cooncatStr(...arg) {
+    let res = '';
+    arg.map(item =>{
+        for(let i = 0; i < 4; i++){
+            res += item[i];
+            
+        }
+    });
+    return res;
+}
+console.log(cooncatStr('this','test','lock')); */
+
+
+//Task18
+
+function findElement(str1, str2){
+    let res = [];
+    let arr = str1.split('').concat(str2.split('')).sort();
+   
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] !== arr[i-1]){
+            res.push(arr[i]);
+        }
+    }
+    return res.join('');
+
+}
+console.log(findElement('LOOPINGISFUNBUTDANGEROUS','LESSDANGEROUSTHANCODING'));
+
+//Task20
+
+function sortArr (arr){
+    let str = [];
+    let num = [];
+
+    arr.forEach(item =>{
+        if(typeof item === 'number') num.push(item);
+        else if(typeof item === 'string') str.push(item);
+    });
+    return num.sort((a, b) => a - b).concat(str.sort());
+}
+
+console.log(sortArr([1, 2, 3, 4, 5]));
+
+//Task21
+
+function exam (answerTrue, answerStudent){
+    let count = 0;
+    for(let i = 0; i < answerTrue.length; i++){
+        if(answerTrue[i] == answerStudent[i]) count += 4;
+        else if( answerTrue[i] !== answerStudent[i] && answerStudent[i] != "") count -= 1;
+        else count += 0;
+    }
+    if(count < 0) return 0;
+    return count;
+}
+console.log(exam(['A', 'A', 'B', 'C'],['A', 'A', 'B', 'C']));
+
+//Task22
+
+function sumNum(num){
+    return num.toString().split('').reduce((accum, item) =>{
+        return accum *= item;
+    });
+}
+console.log(sumNum(12345));
+
+//Task 23
+function arrFromNumb(num) {
+    let arr = [];
+    for(let i = num; i >= 0; i--){
+        arr.push(i);
+    }
+    return arr;
+}
+console.log(arrFromNumb(6));
