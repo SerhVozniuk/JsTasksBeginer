@@ -296,3 +296,155 @@ function arrFromNumb(num) {
     return arr;
 }
 console.log(arrFromNumb(6));
+
+//Task24 Из цифры слово
+
+switch(5){
+    case 1:
+        console.log('Один');
+        break;
+    case 2:
+        console.log('два');
+        break;
+    case 3:
+        console.log('три');
+        break;
+    case 4:
+        console.log('четыре');
+        break;
+    case 5:
+        console.log('пять');
+        break;
+    default: 
+    console.log('Error');
+}
+
+//task 25 Сумма двух
+
+function sumArr(arr1, arr2){
+    return arr1.concat(arr2).reduce((accum, item) =>{
+        return accum += item;
+    });
+}
+
+console.log( sumArr([1, 2, 3], [4, 5, 6]));
+
+//task26 Приветствие пользователя
+
+function greetingUser(name){
+    return `Привет, ${name}`;
+}
+console.log(greetingUser('Сергей'));
+
+//task27 Приветствие пользователя
+
+function greetingUser2(num, str){
+    let res = '';
+    if(num <= 0) return ' ';
+    for(let i = 0; i < num; i++){
+        res += str;
+    }
+    return res;
+}
+console.log( greetingUser2(0, 'a'));
+
+//task28 Верните отрицательное число
+
+function returnNumber(num){
+    if(num <= 0) return num;
+    else if(num > 0) return -num;
+}
+console.log(returnNumber(0.12));
+
+//task 29 
+function helpColeg(n, m) {
+    if(n < 0 || m < 0) return 0;
+    return n * m;
+}
+console.log(helpColeg(-5, 5));
+
+//Task30 Терминальная игра
+
+function terminalGame(start, move){
+    return start + (move * 2);
+}
+console.log(terminalGame(3, 6));
+
+//Task 31 Переверните строки
+
+function reverseStr(str){
+    return str.split('').reverse().join('');
+}
+console.log(reverseStr('h'));
+
+//Task32 Спасение принцессы
+
+function savePrinces(arrows, dragon){
+    return (arrows / dragon >= 2)
+}
+console.log(savePrinces(4, 5));
+
+//Task 34  Сумма всех чисел числа (0_0)
+function sumAllInt(num){
+    let arrNum = [];
+    for(let i = 1; i <= num; i++){
+        arrNum.push(i);
+    }
+    return arrNum.reduce((accum, item) =>{
+        return accum += item;
+    });
+}
+console.log(sumAllInt(8));
+
+//Task 35 Сумма положительных
+function sumPositiv(arr){
+    let sum  = 0;
+    arr.forEach(item =>{
+        if(item > 0) sum += item;
+    });
+    return sum;
+}
+console.log(sumPositiv([-1,2,3,4,-5]));
+
+//Task 36 Строковое значение
+
+function stringValur (a){
+    return a.toString();
+}
+console.log(stringValur (true));
+
+//Task 37 Определите победителя
+
+function spotWinner(arr1, arr2){
+    if(arr2[0] > arr2[1]) return `В матче ${arr1[0]} - ${arr1[1]}, ${arr1[0]} победила!`;
+    else if( arr2[0] < arr2[1]) return `В матче ${arr1[0]} - ${arr1[1]},  ${arr1[1]} победила!`;
+}
+console.log(spotWinner(['Virtus.pro', 'Team Spirit'],[0, 3]));
+
+//Task 38 Поиск кол-ва символов
+function findStr(str){
+    return str.indexOf('город');
+}
+console.log(findStr('Мой город самый лучший город в России!'));
+
+//Task 39 Обрезание строк
+
+const str = 'я учу javascript!';
+console.log(str.substr(2, 3));
+console.log(str.substr(6, 10));
+
+console.log(str.substring(2, 5));
+
+console.log(str.slice(2, 5));
+
+//Task 40 Разница двух массивов
+
+function differenceTwoArr(firstArr, secondArr){
+    let a = 1;
+    let b = 1;
+    
+    firstArr.forEach(item => {a *= item});
+    secondArr.forEach(item => {b *= item});
+    return a -b;
+}
+console.log(differenceTwoArr([3, 2, 5], [1, 4, 4]));
